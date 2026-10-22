@@ -1,0 +1,137 @@
+/*
+Project Name: Bootstrap 5 ECO2 Template
+Project URI: 
+Description: 
+Author: Joshua Vining
+Author URI: https://github.com/jvining
+*/
+
+:root {
+  --event-font-primary:'Open Sans', 'Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif' ;
+  --event-font-secondary:'Open Sans', 'Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif' ;
+  --event-color-primary:#999;
+  --event-color-secondary:#666;
+  --event-color-accent:#333;
+  --event-header-color:#666;
+  --event-hero:url('https://picsum.photos/1400/450') center center scroll no-repeat;
+  --event-subpage-hero:url('https://picsum.photos/1400/450') center center scroll no-repeat;
+}
+
+/********************************
+ Global
+********************************/
+html, body {overflow-x:hidden; width:100vw; min-height:600px; height: 100%;}
+html, body.modal-open {overflow-x:unset; padding-right:unset!important;}
+body {background:#fbfbfb; color: var(--event-header-color); font-family: var(--event-font-secondary); }
+ 
+ 
+/********************************
+ Primary Navigation
+ 3 sections: logo, nav items, CTAs. Layout handled by navbar-expand-lg + order-lg-3.
+ Two togglers both open #primary-nav: one by the logo (below md), one by the CTAs (md-lg).
+ Per-event hooks: #eco-nav-item-*, #eco-nav-dropdown-*, .eco-nav-cta
+********************************/
+#eco-primary-nav {transition:all 0.5s ease;}
+
+/* Primary Nav Logo */
+#eco-primary-nav .navbar-brand {display:block; flex: 0 1 clamp(120px, 30vw, 200px); padding:0; margin:0;}
+#eco-primary-nav .navbar-brand .eco-logo {display:block; width:100%; height:auto;}
+
+/* Primary Nav Logo Swap - knockout over the hero, color on scroll */
+#eco-primary-nav .navbar-brand .eco-logo-color {display:none;}
+#eco-primary-nav.bg-light .navbar-brand .eco-logo-color {display:block;}
+#eco-primary-nav.bg-light .navbar-brand .eco-logo-knockout {display:none;}
+
+/* Primary Nav On-Hover Behavior */
+#eco-primary-nav .dropdown:hover>.dropdown-menu {display: block;}
+#eco-primary-nav .dropdown>.dropdown-toggle:active {pointer-events: none;}
+
+/* Primary Nav Mobile Dropdown */
+@media(max-width:990px){ #eco-primary-nav.bg-transparent .navbar-collapse.collapse.show,  #eco-primary-nav.bg-transparent .navbar-collapse.collapsing{background:#fbfbfb; border: var(--bs-border-width) var(--bs-border-style) var(--bs-border-color) !important; box-shadow: var(--bs-box-shadow) !important; padding:1em; border-radius: calc(.75rem - 1px)!important; --bs-navbar-color:#333; --bs-navbar-hover-color:#333; --bs-navbar-active-color:#333;}}
+
+/* Removes Dropdown Carets */
+#eco-primary-nav .dropdown-toggle::after {display: none;}
+
+/* Sytles Hamburger */
+#eco-primary-nav .navbar-toggler{border:none;}
+
+/********************************
+ Hero
+********************************/
+body.front-page #eco-header {height:100vh; background:var(--event-hero); background-size:cover; box-shadow:inset 10000px 0 0 rgba(0,0,0,.4);}
+body.not-front #eco-header {height:35vh; background:var(--event-subpage-hero); background-size:cover; box-shadow:inset 10000px 0 0 rgba(0,0,0,.5);}
+
+/********************************
+ Footer
+********************************/
+#eco-footer {position: sticky; top: 100vh;}
+#eco-footer .slick-slide {background:#fbfbfb;}
+#eco-footer .slick-slide img {mix-blend-mode:multiply;}
+
+/********************************
+ Sponsor Carousel  
+********************************/
+#eco-footer .slick-slide {background-color:white;border-radius:var(--event-br-global);padding: .5em;margin:1em;box-shadow:0px 0px 10px #e7e7e7;aspect-ratio: 3/2.5;height: unset; overflow: hidden; border-radius: calc(.75rem - 1px)!important;}
+#eco-footer .slick-slide  img{mix-blend-mode:multiply!important;}
+
+/********************************
+ Buttons
+********************************/
+.btn-event,.btn-danger,.btn-success,.btn-warning,.btn-info,.btn-default,.btn-register,.btn-event,.btn-primary,.btn-secondary,.btn-inverse,.btn-dark {color:#fff; font-family:var(--event-font-secondary); transition:all 0.3s ease;}
+.btn-event:hover,.btn-danger:hover,.btn-success:hover,.btn-warning:hover,.btn-info:hover,.btn-default:hover,.btn-register:hover,.btn-event:hover,.btn-primary:hover,.btn-secondary:hover,.btn-inverse:hover,.btn-dark:hover {transition:all 0.3s ease;}
+
+/* Branded Buttons Styles */
+.btn-event{background: var(--event-color-primary)!important; color:#fff;}
+.btn-event:hover{background: var(--event-color-secondary)!important; color:#fff;}
+
+.btn-inverse{background:var(--event-color-secondary); color:#fff;}
+.btn-inverse:hover{background:var(--event-color-primary); color:#fff;}
+
+/* Bootstrap XL's  */
+.rounded-xl {border-radius: calc(.75rem - 1px)!important;}
+.btn-xl{padding:.5em .85em;font-size:1.5em;}
+@media(max-width:990px){.btn-xl,.btn-lg,.btn-md,.btn-sm,.btn-xs{font-size:1em;}}
+
+/* Bootstrap Outline Buttons  */
+.btn-outline-event{border-color: var(--event-color-primary)!important; color:var(--event-color-primary)!important;}
+.btn-outline-event:hover{background:var(--event-color-primary); border-color: var(--event-color-primary)!important; color:#fff!important;}
+.btn-outline-event.active{background:var(--event-color-primary); border-color: var(--event-color-primary)!important; color:#fff!important;}
+
+/* Bootstrap Outline Buttons Inverse  */
+.btn-outline-inverse{border-color: var(--event-color-secondary)!important; color:var(--event-color-secondary)!important;}
+.btn-outline-inverse:hover{background:var(--event-color-secondary); border-color: var(--event-color-secondary)!important; color:#fff!important;}
+
+
+/********************************
+ Typography
+********************************/
+body h1, body h2, body h3, body h4, body h5 {color: var(--event-header-color)!important; font-weight:700; font-family: var(--event-font-secondary);}
+body p, body ul, body ol, body li, body table, body address, body blockquote, body cite {color:#5f5f5f; font-size:16px; line-height:1.25em; font-weight:400; font-family: var(--event-font-primary);}
+body #eco-content a:not(.btn){color:var(--event-color-primary);font-weight:700;}
+body #eco-content a:not(.btn):hover,body #eco-content a:not(.btn):focus{color:var(--event-color-secondary);}
+
+/* Typography Utility Classes */
+.fa-lg,.fa-1x,.fa-2x,.fa-3x,.fa-4x,.fa-5x,.fa-6x,.fa-7x,.fa-8x,.fa-9x,.fa-10x{line-height:1.25em ;}
+.fa-lg{font-size:1.33333333em ;} .fa-1x{font-size:1.5em ;} .fa-2x{font-size:2em ;} .fa-3x{font-size:3em ;} .fa-4x{font-size:4em ;} .fa-5x{font-size:5em ;} .fa-6x{font-size:6em ;} .fa-7x{font-size:7em ;} .fa-8x{font-size:8em ;} .fa-9x{font-size:9em ;} .fa-10x{font-size:10em ;}
+.fa-stack.fa-lg,.fa-stack.fa-1x,.fa-stack.fa-2x,.fa-stack.fa-3x,.fa-stack.fa-4x,.fa-stack.fa-5x,.fa-stack.fa-6x,.fa-stack.fa-7x,.fa-stack.fa-8x,.fa-stack.fa-9x,.fa-stack.fa-10x{line-height:2em ;}
+
+/* Responsive Typography */
+@media(max-width:990px){body h1[class*="fa-"]{font-size:2em!important;} body h2[class*="fa-"]{font-size:1.9em!important;} body h3[class*="fa-"]{font-size:1.7em!important;} body h4[class*="fa-"]{font-size:1.5em!important;} body h5[class*="fa-"]{font-size:1.2em!important;} body p[class*="fa-"]{font-size:1em!important;} body blockquote p{font-size:1em ;} body blockquote cite{font-size:.85em ;} body p,body ul,body ol,body li,body table,body address,body blockquote,body cite{font-size:16px ;line-height:1.5em;}}
+
+.text-shadow{text-shadow:.04em .04em #5f5f5f ;}
+.small,small{font-size:80%; color:unset;}
+
+/* Effects & Transformations */
+.noHover{pointer-events:none;}
+
+.img-grey{filter: grayscale(100%);}
+.img-gradient::before {content: ""; z-index: 10; width: 100%; height: 100%; display: block; position: absolute; background: linear-gradient(-30deg, color-mix(in srgb, var(--event-color-primary) 75%, transparent), rgba(0, 0, 0, 0) 50%);}
+.img-gradient.rounded-circle::before { border-radius: 50%; content: ""; z-index: 10; width: 100%; height: 100%; display: block; position: absolute; background: linear-gradient(-30deg, rgb(0 0 0 / 45%) 20%, rgba(0, 0, 0, 0) 50%);}
+
+.bg-lighten{box-shadow:inset 10000px 0 0 rgba(255,255,255,.90);}
+.bg-darken{box-shadow:inset 10000px 0 0 rgba(0,0,0,.15);}
+
+/********************************
+Sponsor Listing
+********************************/
+#eco-sponsor-listing article .card-text {overflow: hidden; text-overflow: ellipsis; display: -webkit-box;-webkit-line-clamp:3; -webkit-box-orient: vertical;}   

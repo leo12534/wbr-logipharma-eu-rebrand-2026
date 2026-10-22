@@ -1,0 +1,27 @@
+/*
+Site Name: LogiPharma Rebrand
+Event: LogiPharma EU 2027
+Year: 2026
+URL: https://logipharmaeu.wbresearch.com/
+----------------------------------------------------------------*/
+:root {
+    --pallette: #8C80FF #4E28FF #FC3D79;
+
+    --event-color-primary: #8C80FF;
+    --event-color-secondary: #4E28FF;
+    --event-color-accent: #FC3D79;
+    --event-header-color: #01122D;
+
+    --event-hero-gradient: linear-gradient(357.85deg, rgba(1, 18, 45, 0) 60.01%, var(--event-header-color) 91.93%), linear-gradient(165deg, rgba(1, 18, 45, 0) 60.01%, var(--event-header-color) 91.93%);
+
+    --event-gradient-border: linear-gradient(var(--master-color-primary) 0 0) padding-box, linear-gradient(315deg, var(--event-color-accent) 22.05%, var(--event-header-color) 70.51%, var(--event-color-primary) 85.36%) border-box;
+    --event-image-gradient: linear-gradient(113.74deg, hsl(from var(--event-color-accent) h s l / 0%) 49.94%, hsl(from var(--event-color-accent) h s l / 40%) 98.98%);
+    --event-cta-image-border: linear-gradient(var(--master-color-primary) 0 0) padding-box, linear-gradient(315deg, var(--event-color-primary) 22.05%, var(--event-header-color) 70.51%, var(--event-color-primary) 85.36%) border-box;
+    --event-cta-hr: linear-gradient(90deg, var(--event-color-primary) 20%, var(--event-header-color) 50%, var(--event-color-accent) 80%);
+
+    --event-matrix: url('../img/matrix.svg');
+    --event-matrix-opacity: .75;
+    --hero-matrix-opacity: .75;
+
+    --event-hero: var(--master-color-primary) url('https://cdn.jsdelivr.net/gh/leo12534/wbr-eco2-template-bs5@assets-v1/video/shared/logipharma-hero-poster.jpg') 72% center no-repeat;
+}
