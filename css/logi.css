@@ -618,23 +618,37 @@ Sharing The Knowledge
 }
 
 #tabbed-content-example .nav-link i {
-    display: none;
     margin-top: .75rem;
     font-size: 1.5rem;
     opacity: 0;
     rotate: -90deg;
-    transition: all .3s ease;
+    translate: 0 .5rem;
+    transition: opacity .3s ease, translate .3s ease;
 }
 
 #tabbed-content-example .nav-link.active i {
-    display: block;
     opacity: 1;
+    translate: 0 0;
 }
 
 @media (min-width: 768px) {
-    #tabbed-content-example .nav-link.active i {
+    #tabbed-content-example .nav-link i {
         rotate: 0deg;
+        translate: -.5rem 0;
     }
+}
+
+#tabbed-content-panes > .tab-pane {
+    display: block;
+    grid-area: 1 / 1;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .4s ease, visibility .4s;
+}
+
+#tabbed-content-panes > .tab-pane.active {
+    opacity: 1;
+    visibility: visible;
 }
 
 /********************************
